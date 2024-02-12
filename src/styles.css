@@ -1,0 +1,215 @@
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.message-area {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f8f7f7;
+    overflow-y: auto;
+    max-height: calc(80vh - 80px); /* Уменьшаем высоту области сообщений */
+    height: calc(80vh - 80px); /* Уменьшаем высоту области сообщений */
+    width: calc(100vh - 100px); /* Растягиваем область сообщений по ширине */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* Добавляем полосы прокрутки */
+    overflow: auto;
+    /* Добавляем пользовательский дизайн полосы прокрутки */
+    scrollbar-width: thin;
+    scrollbar-color: #eeebeb #f6f6f6; /* Цвет полосы прокрутки и фона */
+}
+
+
+.user-message {
+
+    border-radius: 10px;
+    font-size:20px;
+    background-color: #c7d2d2; /* Изменяем цвет фона сообщений пользователя */
+    color: #2a2929; /* Изменяем цвет текста сообщений пользователя */
+    text-align: left;
+    margin: 10px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+.assistant-message {
+    border-radius: 10px;
+    font-size:20px;
+    background-color: #e1ecec; /* Изменяем цвет фона сообщений пользователя */
+    color: #2a2929; /* Изменяем цвет текста сообщений пользователя */
+    text-align: left;
+    margin: 10px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+.message-content {
+    word-wrap: break-word;
+}
+
+.input-container {
+    display: flex;
+    margin-top: 20px;
+}
+#bottomPanel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Подстроить под ваш дизайн */
+    background-color: #caf5f5; /* Подстроить под ваш дизайн */
+    display: flex;
+    align-items: center;
+    padding: 0 10px; /* Подстроить под ваш дизайн */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта отделения */
+    margin-outside: 100;
+}
+#bottomPanelinput {
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Положение в середине по горизонтали */
+    transform: translateX(-50%); /* Центрирование относительно родительского элемента */
+    width: calc(100vh - 100px);
+    height: 80px; /* Подстроить под ваш дизайн */
+    background-color: #caf5f5; /* Подстроить под ваш дизайн */
+    display: flex;
+    align-items: center;
+    padding: 0 10px; /* Подстроить под ваш дизайн */
+
+    border: None;
+}
+.input-field {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #a8a8a8;
+    background-color: #e1efef;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    width: 50%;
+    height: 40%;
+    text-decoration-color: white;
+}
+
+.send-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    height: 68%;
+    border: 1px solid #bdbcbc;
+    border-radius: 8px;
+    background-color: #e3f6f6;
+
+    font-weight: bold;
+    color: #757474;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.loading-animation {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chat-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #757474;
+    font-weight: bold;
+}
+
+.mark-box {
+    margin-top: 2px;
+    text-align: right;
+}
+.mark-button {
+    border: 1px solid #a8a8a8;
+    border-radius: 8px;
+
+    background-color: #d1f6f6;
+    color: #888c8c;
+    margin-right: 10px;
+ }
+.mark-button:active{
+    background: #a2f3f3;
+}
+
+.username-input {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding-top: 50px;
+}
+
+.username-input input {
+    width: 180px; /* или любой другой размер, подходящий под ваш дизайн */
+    padding: 8px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.username-input input:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.tags-popup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Расстояние между тегами */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.tag-button {
+    padding: 5px 10px; /* Достаточно места вокруг текста и смайлика */
+    background-color: #daf1f1;
+    border: none;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: inline-block; /* Гарантирует, что кнопка будет размера содержимого */
+    margin: 2px; /* Небольшой отступ между кнопками для визуального разделения */
+}
+
+
+
+.tag-button:hover {
+    background-color: #67abe8;
+}
+.rating-message {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #8bf5a0;
+    color: #737373;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.37);
+    z-index: 1000; /* Для отображения поверх других элементов */
+    display: inline-block;
+}
+
+.message {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.37);
+    z-index: 1000;
+    transition: opacity 1s ease-in-out; /* Добавляет плавное изменение прозрачности */
+}

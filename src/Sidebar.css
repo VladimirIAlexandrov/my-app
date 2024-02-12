@@ -1,0 +1,104 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Изменено с right на left */
+    width: 300px;
+    height: 100%;
+    background-color: #e1ecec;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.closed {
+    transform: translateX(-100%); /* Изменено направление анимации */
+}
+
+.toggle-button {
+    position: absolute;
+    right: -30px; /* Для панели слева кнопка смещается вправо */
+    top: 50%; /* Расположение по центру вертикально */
+    transform: translateY(-50%); /* Смещение кнопки назад на 50% её высоты для точного центрирования */
+    width: 30px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid #e7e4e4;
+    border-radius: 8px;
+    background-color: #e3f6f6;
+    color: #605f5f;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.sidebar-settings {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #ecf3f3;
+
+}
+
+.settings-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+
+    background-color: #c4dada;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #dee1e1;
+
+}
+
+.settings-button:hover {
+    background-color: #8ee7e7; /* Чуть темнее при наведении */
+}
+
+.settings-button span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #757474;
+}
+.sidebar-content {
+    /* Добавление максимальной высоты и включение прокрутки */
+    max-height: 90vh; /* Примерное значение, адаптируйте под размер вашего окна */
+    overflow-y: auto; /* Включает вертикальный скролл, если контент превышает max-height */
+    padding-right: 5px; /* Небольшой отступ справа для удобства */
+    scrollbar-width: thin;
+    scrollbar-color: #eeebeb #f6f6f6; /* Цвет полосы прокрутки и фона */
+    color: #464545;
+    padding: 5px;
+}
+
+.sidebar-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-content li {
+    background-color: #d8d9d9;
+    margin-bottom: 8px;
+    padding: 1px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    list-style: none;
+
+
+
+}
+
+.sidebar-content li:hover {
+    background-color: #f6f4f4; /* Изменение цвета фона при наведении */
+}
